@@ -1,6 +1,8 @@
 const express = require('express');
 const WebSocket = require('ws');
 const fetch = require('node-fetch'); // Pacote para fazer requisições HTTP
+const cors = require('cors'); // Adicione esta linha para importar o CORS
+
 
 // Configuração do servidor HTTP
 const app = express();
