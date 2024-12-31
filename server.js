@@ -6,6 +6,10 @@ const fetch = require('node-fetch'); // Pacote para fazer requisições HTTP
 const app = express();
 const PORT = process.env.PORT || 6040;
 
+
+// Habilitar CORS para todas as origens (em produção, você pode restringir a origem)
+app.use(cors()); // Adiciona o middleware CORS
+
 // Middleware para processar JSON nas requisições
 app.use(express.json());
 
