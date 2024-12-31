@@ -3,7 +3,7 @@ const WebSocket = require('ws');
 
 // Configuração do servidor HTTP
 const app = express();
-const PORT = 3000;
+const PORT = 6040;
 
 // Middleware para processar JSON nas requisições
 app.use(express.json());
