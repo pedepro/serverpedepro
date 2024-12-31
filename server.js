@@ -3,7 +3,7 @@ const WebSocket = require('ws');
 
 // Configuração do servidor HTTP
 const app = express();
-const PORT = 6040;
+const PORT = process.env.PORT || 6040;
 
 // Middleware para processar JSON nas requisições
 app.use(express.json());
@@ -36,4 +36,13 @@ wss.on('connection', (ws) => {
     ws.on('close', () => {
         console.log('Cliente desconectado.');
     });
+});
+
+
+process.on('uncaughtException', (err) => {
+    console.error('Erro não capturado:', err);
+});
+
+process.on('unhandledRejection', (reason, promise) => {
+    console.error('Rejeição não tratada:', reason);
 });
